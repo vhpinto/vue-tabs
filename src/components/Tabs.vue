@@ -1,39 +1,41 @@
 <template>
-    <div class="tabs">
-        <ul class="tabs__header">
-            <li 
-                v-for="title in tabTitles"
-                :key="title"
-                :class="{ selected: title == selectedTitle }"
-                @click="selectedTitle = title"
-            >
-            {{ title }}
-            </li>
-        </ul>
-        <slot />
-    </div>
+        <Nav
+            class="tabs"
+            :titles="tabTitles"
+            :selection="currentButton"
+            @on-selection="select"
+        />
+        <Tab
+            :text="texts[currentButton]"
+        />
 </template>
 
-<script lang="ts">
-import { ref, provide } from "vue";
-export default {
-    setup(props, { slots }) {
-        const tabTitles = ref(slots.default().map((tab) => tab.props.title))
-        const selectedTitle = ref(tabTitles.value[0])
 
-        provide("selectedTitle", selectedTitle)
-        return {
-            selectedTitle,
-            tabTitles,
-        }
-    },
+<script setup lang="ts">
+import { ref } from 'vue'
+import Tab, { type TabProps } from './Tab.vue'
+import Nav, { type NavProps} from './Nav.vue'
+const tabTitles  = ["Tab1", "Tab2", "Tab3", "Tab4"]
+const texts = ["Texto da Tab1", "Texto da Tab2", "Texto da Tab3", "Texto da Tab4"]
+const currentButton =  ref(0)
+function select(buttonIndex: number) {
+    currentButton.value = buttonIndex
 }
 </script>
+
+<style scoped>    
+    div {
+        display: flex;
+        flex-direction: column;
+        max-width: fit-content;
+      }
+</style>
 
 <style scoped>
 .tabs {
     max-width: 400px;
     margin: 0 auto;
+    align-self: center
 }
 
 .tabs__header {
