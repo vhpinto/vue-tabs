@@ -1,6 +1,6 @@
 <template>
         <button v-for="(title, index) in titles" :key="title"
-        class="tabs__header"
+        class="nav"
         @click="$emit('onSelection', index)">
         {{ title }}
         </button>
@@ -19,14 +19,7 @@
 </script>
 
 <style scoped>
-    .tabs {
-        max-width: 400px;
-        margin: 0 auto;
-        display: flex;
-
-    }
-
-    .tabs__header {
+    .nav {
         margin-bottom: 10px;
         padding: 0;
         display: inline;

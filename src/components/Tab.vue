@@ -1,5 +1,5 @@
 <template>
-    <div class="tab-content">
+    <div class="tab__content">
         <h2>{{text}}</h2>
     </div>
 </template>
@@ -12,7 +12,7 @@
 </script>
 
 <style scoped>
-.tab-content {
+.tab__content {
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 3px 5px 5px rgba(0,0,0,0.5);

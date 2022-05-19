@@ -1,22 +1,26 @@
 <template>
         <Nav
             class="tabs"
-            :titles="tabTitles"
+            :titles="props.titles"
             :selection="currentButton"
             @on-selection="select"
         />
         <Tab
-            :text="texts[currentButton]"
+            :text="props.texts[currentButton]"
         />
 </template>
 
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import Tab, { type TabProps } from './Tab.vue'
-import Nav, { type NavProps} from './Nav.vue'
-const tabTitles  = ["Tab1", "Tab2", "Tab3", "Tab4"]
-const texts = ["Texto da Tab1", "Texto da Tab2", "Texto da Tab3", "Texto da Tab4"]
+import Tab from './Tab.vue'
+import Nav from './Nav.vue'
+
+    const props = defineProps<{
+        titles?: string[],
+        texts?: string[],
+    }>();
+
 const currentButton =  ref(0)
 function select(buttonIndex: number) {
     currentButton.value = buttonIndex
@@ -36,26 +40,5 @@ function select(buttonIndex: number) {
     max-width: 400px;
     margin: 0 auto;
     align-self: center
-}
-
-.tabs__header {
-    margin-bottom: 10px;
-    list-style: none;
-    padding: 0;
-    display: flex;
-}
-
-.tabs__header li {
-    width: 80px;
-    text-align: center;
-    padding: 10px 20px;
-    margin-right: 10px;
-    background-color: #ddd;
-    border-radius: 5px;
-}
-
-.tabs__header li.selected {
-    background-color: #0984e3;
-    color: white;
 }
 </style>
