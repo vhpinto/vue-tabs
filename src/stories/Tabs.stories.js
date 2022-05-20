@@ -15,6 +15,16 @@ const Template = (args) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-    titles: ["Tab1", "Tab2", "Tab3", "Tab4"],
-    texts: ["Texto da Tab1", "Texto da Tab2", "Texto da Tab3", "Texto da Tab4"],
+    titles: [
+      "Stories Tab 1 title",
+      "Stories Tab 2 title",
+      "Stories Tab 3 title",
+      "Stories Tab 4 title"
+    ],
+    texts: [
+      "Stories Tab 1 text",
+      "Stories Tab 2 text",
+      "Stories Tab 3 text",
+      "Stories Tab 4 text"
+    ],
 };

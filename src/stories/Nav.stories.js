@@ -15,5 +15,5 @@ const Template = (args) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  titles: ['Botão 1'],
+  titles: ['Story title'],
 };
