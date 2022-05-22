@@ -1,7 +1,5 @@
 <template>
-    <div class="tab__content">
-        <h2>{{text}}</h2>
-    </div>
+    <h2 class="tab"> {{ text }} </h2>
 </template>
 
 <script setup lang="ts">
@@ -12,10 +10,14 @@
 </script>
 
 <style scoped>
-.tab__content {
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 3px 5px 5px rgba(0,0,0,0.5);
-  min-width: 300px;
-}
+.tab {
+    width: 80%;
+    height: auto;
+    min-height: 400px;
+    background: #053742;
+    margin: 0 auto 1.5rem;
+    padding: 2rem 1rem;
+    color: #e8f0f2;
+    border-radius: 2rem;
+  }
 </style>

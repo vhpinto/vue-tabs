@@ -1,13 +1,14 @@
 <template>
+    <div className="tabs">
         <Nav
-            class="tabs"
             :titles="props.titles"
             :selection="currentButton"
             @on-selection="select"
-        />
+        ></Nav>
         <Tab
             :text="props.texts[currentButton]"
-        />
+        ></Tab>
+    </div>
 </template>
 
 
@@ -28,17 +29,9 @@ function select(buttonIndex: number) {
 </script>
 
 <style scoped>    
-    div {
-        display: flex;
-        flex-direction: column;
-        max-width: fit-content;
-      }
-</style>
-
-<style scoped>
 .tabs {
-    max-width: 400px;
-    margin: 0 auto;
-    align-self: center
-}
+    height: auto;
+    width: auto;
+    max-width: 1000px;
+  }
 </style>

@@ -1,7 +1,7 @@
 import Nav from "../components/Nav.vue";
 
 export default {
-  title: 'Nav',
+  title: 'Tabs/Nav',
   component: Nav
 };
 
